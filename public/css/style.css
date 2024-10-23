@@ -1,0 +1,496 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.container-fluid {
+    height: 100%;
+    display: flex;
+    padding: 20px; /* Reduced padding */
+}
+/* Left Section */
+.left-section {
+    background-color: #000;
+    color: #fff;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; /* Reduced padding */
+}
+.left-section h1 {
+    font-size: 28px; /* Reduced font size */
+    margin-bottom: 15px; /* Reduced margin */
+}
+.left-section p {
+    font-size: 16px; /* Reduced font size */
+}
+/* Right Section */
+.right-section {
+    background-color: #fff;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container {
+    width: 80%;
+}
+.form-container h2 {
+    margin-bottom: 20px; /* Reduced margin */
+}
+.form-group input {
+    width: 100%;
+    padding: 8px; /* Further reduced padding */
+    font-size: 14px; /* Kept reduced font size */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px; /* Reduced margin */
+}
+.btn-submit {
+    background-color: #000;
+    color: #fff;
+    padding: 8px; /* Reduced padding */
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px; /* Reduced margin */
+}
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Reduced margin */
+}
+.btn-toggle {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #000;
+    padding: 10px 15px; /* Adjusted padding */
+    margin: 0 5px; /* Adjusted margin */
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.active-toggle {
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+#registerForm {
+    display: none;
+}
+
+
+
+
+
+
+/* dashboard */
+.chat-container , .group-chat-container{
+    width: 95%; /* Set width to 95% */
+    height: 95%; /* Adjust height */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Column layout */
+    margin-top: 50px; /* Add some top margin */
+}
+
+.profile-pic-header,.group-profile-pic-header {
+    width: 40px; /* Set width for the image */
+    height: 40px; /* Set height for the image */
+    border-radius: 50%; /* Make the image round */
+    margin-right: 10px; /* Space between image and username */
+    vertical-align: middle; /* Align vertically with the text */
+}
+
+.chat-header,.group-chat-header {
+    background: #343a40; /* Dark header */
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chat-messages,.group-chat-messages {
+    flex: 1; 
+    padding: 15px;
+    overflow-y: auto; 
+}
+
+.message,.groupmessage {
+    margin-bottom: 15px; /* Space between messages */
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 50%; /* Limit width for better appearance */
+}
+
+.message.sent {
+    background-color: #343a40; /* Sent message color */
+    color: white;
+    margin-left: auto; /* Align sent messages to the right */
+}
+
+.message.received {
+    background-color: #e9ecef; /* Received message color */
+    color: black;
+    margin-right: auto; /* Align received messages to the left */
+}
+.message {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 50%;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+/* Sent message styling */
+.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+/* Received message styling */
+.received {
+    background-color: #ffffff;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+/* Options (3 dots) styling */
+.options {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.dots {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.dots::before {
+    content: '\2807'; /* Unicode for vertical dots */
+    font-size: 18px;
+}
+
+.delete-message {
+    display: none;
+    font-size: 12px;
+    color: red;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.select-contact-container {
+    display: flex; /* Center content */
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Fill the available height */
+}
+
+.select-contact-card {
+    background: #f8f9fa; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text */
+}
+
+.select-contact-card h1 {
+    font-size: 24px; /* Adjust heading size */
+    color: #343a40; /* Dark text color */
+}
+#no-contact-message {
+    transition: box-shadow 0.3s ease;
+}
+
+#no-contact-message:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-weight: bold;
+    color: #343a40; /* Dark text for better visibility */
+}
+
+.card-text {
+    color: #6c757d; /* Lighter text for contrast */
+}
+
+
+
+
+
+
+
+/* Sidebar */
+
+/* General body styles */
+body {
+    background-color: white;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    transition: margin-left 0.3s; /* Smooth transition for margin */
+}
+
+/* Navbar styles */
+.navbar {
+    width: 100%; /* Full width */
+    background: #343a40; /* Same as sidebar */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Padding for navbar */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center vertically */
+    position: fixed; /* Fixed position at top */
+    top: 0; /* Stick to the top */
+    z-index: 1; /* Stay above other content */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px; /* Set sidebar width */
+    background: #343a40; /* Dark background color */
+    color: white; /* Text color */
+    padding: 75px 15px 15px; /* Top padding increased for space */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed; /* Fixed position */
+    left: 0;
+    top: 0;
+    transition: transform 0.3s; /* Smooth transition for sidebar */
+}
+
+/* Hide the sidebar */
+.sidebar.hidden {
+    transform: translateX(-100%); /* Move sidebar off screen */
+}
+
+/* Toggle button styles */
+.toggle-btn {
+    cursor: pointer;
+    color: white;
+    background: #343a40;
+    border: none;
+    font-size: 18px;
+    margin-left: 25px; 
+    z-index: 1; /* Stay above other content */
+}
+/* Content area styles */
+.content {
+    flex: 1; /* Make it take remaining space */
+    padding: 15px;
+    background: white; /* Background color for content */
+    border-radius: 8px;
+    margin-left: 250px; /* Adjust margin for sidebar */
+    transition: margin-left 0.3s; /* Smooth transition for content */
+}
+
+/* Shift content when sidebar is hidden */
+.content.shifted {
+    margin-left: 50px; /* Adjust margin when sidebar is hidden */
+}
+
+/* Other existing styles... */
+
+/* Contact list styles */
+.contacts {
+    display: none; /* Hidden by default */
+}
+.badge {
+    font-size: 0.9rem; 
+    padding: 0.3em 0.5em;
+}
+
+/* Option item styles */
+.option {
+    cursor: pointer; /* Cursor pointer for options */
+    padding: 10px;
+    color: white; /* Text color for options */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center vertically */
+    transition: background 0.3s; /* Smooth transition */
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+}
+
+/* Contact link styles */
+.contact {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center vertically */
+    transition: background 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.contact:hover {
+    background: rgba(255, 255, 255, 0.2); 
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+.create-group-options {
+    display: none; 
+    position: absolute; 
+    background: transparent; 
+    border: 1px solid #dee2e6; 
+    border-radius: 0.5rem; 
+    z-index: 1000;
+    right: 0;
+    top:65px;
+}
+.navoption {
+    padding: 10px; 
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Logout button styles */
+.logout-btn {
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s; /* Add transition */
+}
+
+.logout-btn:hover {
+    background-color: #c82333; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Profile picture styles */
+.profile-pic {
+    width: 40px; /* Set the width */
+    height: 40px; /* Set the height */
+    border-radius: 50%; /* Make it round */
+    object-fit: cover; /* Ensure the image covers the area */
+    margin-right: 10px; /* Space between image and text */
+}
+
+/* Styles for logged-in user display */
+.logged-in-user {
+    margin-left: 25px;
+    margin-top: 5px;
+}
+
+/* Icon styles */
+.option i, .contact i {
+    margin-right: 10px; /* Space between icon and name */
+}
+
+/* Search Container */
+.search-container {
+    background: #343a40; 
+    border-radius: 5px; 
+    width: 350px;
+}
+
+/* Search Input */
+.search-input {
+    width: 100%; 
+    border: 1px solid rgb(146, 144, 144); 
+    background: transparent; 
+    color: white; 
+    border-radius: 5px; 
+}
+
+
+/* Placeholder text color */
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Light color for placeholder */
+}
+
+
+
+
+
+
+#search-results {
+    display: flex; 
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 20px; /* Increased space between cards */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+.user-card {
+    background-color: white; /* White background for the card */
+    border: 1px solid black; /* Black border around the card */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 15px;
+    padding: 15px; /* Inner padding */
+    width: 250px; /* Increased width for cards */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.profile-pic {
+    width: 80px; /* Set profile picture width */
+    height: 80px; /* Set profile picture height */
+    border-radius: 50%; /* Circular profile picture */
+    object-fit: cover; /* Ensure image covers area */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.username {
+    display: block; /* Make the username block */
+    font-weight: bold; /* Bold text for username */
+    margin-bottom: 10px; /* Space below the username */
+}
+
+.button-group {
+    display: flex; /* Flexbox for button layout */
+    justify-content: center; /* Center buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+.view-profile-btn,
+.add-friend-btn {
+    background-color: black; /* Black background for buttons */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 8px 10px; /* Padding for buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Smooth background transition */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.view-profile-btn:hover,
+.add-friend-btn:hover {
+    background-color: darkgray; /* Darker shade on hover */
+}
+.friendreqprofile-pic{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.friend-request {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profile-input {
+    border: none;
+    background-color: transparent;
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-left: 0;
+}
+
+.profile-input:focus {
+    border-bottom: 2px solid #007bff;
+    outline: none;
+}
